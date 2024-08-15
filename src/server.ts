@@ -29,5 +29,6 @@ app.use(cors());
 app.use(router);
 
 app.listen(port, () => {
+  console.log(path.join(__dirname, 'public'));
   console.log(`🚀 Server running in ${port}...`)
 })
