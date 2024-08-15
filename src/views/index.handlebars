@@ -1,0 +1,66 @@
+<div class="flex flex-col max-h-screen p-2 border-2 border-gray-600 rounded">
+  <div class="flex max-h-[60%] border-2 border-gray-700 w-full">
+    <canvas id="revenueChart" height="520"></canvas>
+  </div>
+  <div class="flex flex-col max-h-screen mt-4 overflow-y-auto">
+    <div class="p-1.8 min-w-full inline-block align-middle">
+      <div class="border rounded-lg overflow-hidden dark:border-neutral-700">
+        <div id="wrapper"></div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+
+<script type="text/javascript" src="./js/chart-config.js"></script>
+<script type="text/javascript" src="./js/helper.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+
+<script type="text/javascript">
+  const data = {{{json listings}}};
+  const grid = new gridjs.Grid({
+    columns: [
+      {
+        id: "listing_id",
+        name: "Listing ID"
+      },
+      {
+        id: "listing_month",
+        name: "Listing Month",
+        formatter: (cell) => cell
+      },
+      {
+        id: "listing_date",
+        name: "Listing Date",
+        formatter: (cell) => formatDate(cell)
+      },
+      {
+        id: "broker",
+        name: "Broker"
+      },
+      {
+        id: "revenue",
+        name: "Revenue",
+        formatter: (cell) => formatCurrency(cell)
+      }
+    ],
+    pagination: {
+      limit: 10,
+    },
+    sort: true,
+    search: true,
+    fixedHeader: true,
+    data,
+    height: '300px',
+    className: {
+      table: 'min-w-full divide-y divide-gray-200 dark:divide-neutral-700',
+      thead: 'bg-gray-50 dark:bg-neutral-700',
+      th: 'px-6 py-3 text-start text-xs font-medium text-gray-700 uppercase dark:text-neutral-500',
+      tbody: 'divide-y divide-gray-200 dark:divide-neutral-700 max-h-screen mt-4 overflow-y-auto'
+    }
+  }).render(document.getElementById("wrapper"));
+</script>
+
