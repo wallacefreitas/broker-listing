@@ -40,7 +40,7 @@ To more info:
 ```bash
 
 # Clone this repository
-$ git clone https://git.number8.com/wallace.branco/fullstack-assessment.git
+$ git clone https://git.number8.com/wallace.branco/fullstack-assessment.git](https://github.com/wallacefreitas/broker-listing.git
 
 ```
 ---
