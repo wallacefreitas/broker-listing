@@ -2,7 +2,7 @@
 
 This repo was development using Node.js with TS/JS, Postgres, Chart.js and Handlebars. The main idea of this project was to use some design patterns with Clean Architecture.
 
-To acccess the project, <a href="https://number8-web.vercel.app/" target="_blank">click here</a>
+To acccess the project, <a href="https://broker-listings.fly.dev/" target="_blank">click here</a>
 
 Below I explained a little of patterns:
 
