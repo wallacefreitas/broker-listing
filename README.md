@@ -72,6 +72,11 @@ $ pnpm run test
 
 ```
 
+## 🧪 Coverage
+
+![image](https://github.com/user-attachments/assets/7f5bee06-583b-4eea-b1de-ca8fb36a621a)
+
+
 ## ⚙️ Services
 
 | App             |    Host                             |   Port        |
